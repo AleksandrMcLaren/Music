@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DBAlbum" representedClassName="DBAlbum" syncable="YES">
+        <attribute name="cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isUserLikes" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="peoplesList" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="peoples" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBPeople" inverseName="albums" inverseEntity="DBPeople" syncable="YES"/>
+        <relationship name="recommendationGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBRecommendationGroup" inverseName="albums" inverseEntity="DBRecommendationGroup" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBTrack" inverseName="album" inverseEntity="DBTrack" syncable="YES"/>
+    </entity>
+    <entity name="DBCollection" representedClassName="DBCollection" syncable="YES">
+        <attribute name="allTrackDuration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cover_square" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cover_wide" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isUserLikes" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subtitle_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle_kk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle_ru" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_kk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_ru" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trackCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="collectionGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBCollectionGroup" inverseName="collections" inverseEntity="DBCollectionGroup" syncable="YES"/>
+        <relationship name="peoples" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBPeople" inverseName="collection" inverseEntity="DBPeople" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBTrack" inverseName="collections" inverseEntity="DBTrack" syncable="YES"/>
+    </entity>
+    <entity name="DBCollectionGroup" representedClassName="DBCollectionGroup" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_kk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name_ru" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="collections" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBCollection" inverseName="collectionGroups" inverseEntity="DBCollection" syncable="YES"/>
+    </entity>
+    <entity name="DBPeople" representedClassName="DBPeople" syncable="YES">
+        <attribute name="cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre_kk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="genre_ru" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isUserLikes" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBAlbum" inverseName="peoples" inverseEntity="DBAlbum" syncable="YES"/>
+        <relationship name="collection" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBCollection" inverseName="peoples" inverseEntity="DBCollection" syncable="YES"/>
+        <relationship name="recommendationGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBRecommendationGroup" inverseName="peoples" inverseEntity="DBRecommendationGroup" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBTrack" inverseName="peoples" inverseEntity="DBTrack" syncable="YES"/>
+    </entity>
+    <entity name="DBRecommendationGroup" representedClassName="DBRecommendationGroup" syncable="YES">
+        <attribute name="categoryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="slug" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle_kk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subtitle_ru" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_kk" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title_ru" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBAlbum" inverseName="recommendationGroup" inverseEntity="DBAlbum" syncable="YES"/>
+        <relationship name="peoples" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBPeople" inverseName="recommendationGroup" inverseEntity="DBPeople" syncable="YES"/>
+        <relationship name="tracks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBTrack" inverseName="recommendationGroup" inverseEntity="DBTrack" syncable="YES"/>
+    </entity>
+    <entity name="DBTrack" representedClassName="DBTrack" syncable="YES">
+        <attribute name="cover" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isUserLikes" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lyrics" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="peoplesList" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DBAlbum" inverseName="tracks" inverseEntity="DBAlbum" syncable="YES"/>
+        <relationship name="collections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBCollection" inverseName="tracks" inverseEntity="DBCollection" syncable="YES"/>
+        <relationship name="peoples" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="DBPeople" inverseName="tracks" inverseEntity="DBPeople" syncable="YES"/>
+        <relationship name="recommendationGroup" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DBRecommendationGroup" inverseName="tracks" inverseEntity="DBRecommendationGroup" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DBAlbum" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="DBCollection" positionX="-45" positionY="90" width="128" height="270"/>
+        <element name="DBCollectionGroup" positionX="-54" positionY="81" width="128" height="150"/>
+        <element name="DBPeople" positionX="-36" positionY="36" width="128" height="210"/>
+        <element name="DBRecommendationGroup" positionX="-45" positionY="135" width="128" height="240"/>
+        <element name="DBTrack" positionX="-54" positionY="27" width="128" height="225"/>
+    </elements>
+</model>

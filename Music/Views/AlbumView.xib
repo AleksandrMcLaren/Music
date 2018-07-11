@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="8eO-Xe-kg7" customClass="AlbumView" customModule="Music" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="620" height="175"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWF-mS-GRi" customClass="ImageView" customModule="Music" customModuleProvider="target">
+                    <rect key="frame" x="20" y="10" width="155" height="155"/>
+                    <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KWF-mS-GRi" secondAttribute="height" multiplier="1:1" id="TZ9-VM-FJU"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnc-Hv-XnP" customClass="AlbumDescriptionView" customModule="Music" customModuleProvider="target">
+                    <rect key="frame" x="175" y="10" width="425" height="155"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Ah-4q-YTU" firstAttribute="trailing" secondItem="Jnc-Hv-XnP" secondAttribute="trailing" constant="20" id="5LI-a7-Lsy"/>
+                <constraint firstItem="0Ah-4q-YTU" firstAttribute="bottom" secondItem="KWF-mS-GRi" secondAttribute="bottom" constant="10" id="Mwd-a0-JIY"/>
+                <constraint firstItem="Jnc-Hv-XnP" firstAttribute="top" secondItem="0Ah-4q-YTU" secondAttribute="top" constant="10" id="T8L-v6-wZd"/>
+                <constraint firstItem="0Ah-4q-YTU" firstAttribute="bottom" secondItem="Jnc-Hv-XnP" secondAttribute="bottom" constant="10" id="XeG-34-fg1"/>
+                <constraint firstItem="KWF-mS-GRi" firstAttribute="leading" secondItem="0Ah-4q-YTU" secondAttribute="leading" constant="20" id="n4e-P9-Lel"/>
+                <constraint firstItem="KWF-mS-GRi" firstAttribute="top" secondItem="0Ah-4q-YTU" secondAttribute="top" constant="10" id="nm4-nT-Qpg"/>
+                <constraint firstItem="Jnc-Hv-XnP" firstAttribute="leading" secondItem="KWF-mS-GRi" secondAttribute="trailing" id="qu0-N9-j4n"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="0Ah-4q-YTU"/>
+            <connections>
+                <outlet property="descView" destination="Jnc-Hv-XnP" id="byT-SR-UWX"/>
+                <outlet property="imView" destination="KWF-mS-GRi" id="nZL-YJ-HUP"/>
+                <outlet property="leadingConstraint" destination="n4e-P9-Lel" id="bZz-G3-Syq"/>
+                <outlet property="trailingConstraint" destination="5LI-a7-Lsy" id="UWs-lT-FxI"/>
+            </connections>
+            <point key="canvasLocation" x="-799" y="-892.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  Music
+
+  Created by Aleksandr on 23.01.2018.
+  Copyright © 2018 Aleksandr. All rights reserved.
+*/
+
+"tab_item_menu" = "Menu";
+"tab_item_album" = "Album";
+"tab_item_catalog" = "Catalog";
+"tab_item_recom" = "Recommendations";
+
+"title_albums" = "Albums";
+"title_catalog" = "Catalog";
+"title_album_news" = "New Albums";
+"title_collections" = "Collections";
+"title_recom" = "Recommendations";
+
+"auth_title" = "Phone";
+"auth_button_done" = "Done";
+
+"alert_title_message" = "Message";
+"alert_wrong" = "Something went wrong";
+
+"button_more" = "More";
+

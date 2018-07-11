@@ -1,0 +1,18 @@
+PODS:
+  - Kingfisher (4.2.0)
+  - MessageKit (0.13.1)
+  - ReachabilitySwift (3)
+
+DEPENDENCIES:
+  - Kingfisher (~> 4.0)
+  - MessageKit
+  - ReachabilitySwift (~> 3)
+
+SPEC CHECKSUMS:
+  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  MessageKit: fc74d71d9b05385138d47b3a4b7beef5c687daf1
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+
+PODFILE CHECKSUM: 786e192b4449da7518fb18464602a558c2795d8a
+
+COCOAPODS: 1.4.0
